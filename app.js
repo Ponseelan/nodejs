@@ -10,8 +10,8 @@ var userSchema=mongoose.Schema(
 			lastName:String
 		}
 	});
-var users=mongoose.model("users",userSchema);
-var firstUser=new users(
+var Users=mongoose.model("ponse",userSchema);
+var firstUser=new Users(
 {
 name:
 {
@@ -21,13 +21,10 @@ name:
 });
 mongoose.connect(connection.mongodbConnectionURL,{useNewUrlParser:true},function(err,db)
 {
-db.createCollection("users",function(errCollection,colection)
-{
-
 firstUser.save(function(err)
 {
 if(err)
 	console.log(err);
 });
-})
+
 });
