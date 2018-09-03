@@ -35,9 +35,27 @@ Usermodel.find({}, function(err, users1) {
     res.send(userMap1);  
   });
 });
+
+
+
 app.post("/postUser",function(req,res)
 {
-res.end("hai ponseelan");
+res.send("hai ponseelan");
+});
+
+var router=express.Router();
+router.use(function(req,res,next)
+{
+	next();
+},function(req,res,next)
+{
+	next();
+})
+//app.use("/",router);
+app.get("/",function(req,res,next)
+{
+res.download("D:\\sso.log")
+res.send("file download");
 });
 app.listen(8085,function()
 {
