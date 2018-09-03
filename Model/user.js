@@ -1,3 +1,4 @@
+var mongoose=require("mongoose");
 var userSchema=mongoose.Schema(
 	{
 		name:
@@ -7,12 +8,4 @@ var userSchema=mongoose.Schema(
 		}
 	});
 var Users=mongoose.model("ponse",userSchema);
-var User=new Users(
-{
-name:
-{
-	firstName : 'Ponselaan',
-	lastName : 'madonna'
-}
-});
-module.exports=User;
+module.exports=Users;
