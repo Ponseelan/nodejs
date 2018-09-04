@@ -13,7 +13,7 @@ res.end("got response");
 router.post("/registerUser",function(req,res,next)
 {
 user.createUser(req.headers.firstname,req.headers.lastname);
-res.end("user created Successfully");
+res.end(req.headers.firstname+"created Successfully");
 next();
 });
 module.exports=router;
