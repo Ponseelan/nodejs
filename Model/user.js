@@ -1,4 +1,4 @@
-var mongoose=require("mongoose");
+var mongoose=require("../mongooseConnectable/mongoose.js");
 var userSchema=mongoose.Schema(
 	{
 		name:
