@@ -1,8 +1,15 @@
-var sess;
-var loginUser=function(req)
+var user=require("../Model/user.js");
+var usermodel=new user(
 {
-sess = req.session;
-sess.name = req.headers.firstname;
-return true;
+	name:
+	{
+		firstName:"ponseelan",
+		lastName:"Emil"
+	}
+})
+var saveUser=function()
+{
+	usermodel.save();
+	return true;
 }
-module.exports=loginUser;
+module.exports=saveUser;

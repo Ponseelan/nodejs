@@ -10,10 +10,27 @@ var loginUser=require("../controller/LoginController.js");
 	//else
 	//	res.end("logged out");
 //})
+router.use(function(req,res,next)
+{
+	var cookie=req.cookies;
+	if(cookie.ponseelan)
+	{		
+		next();
+	}
+	else
+	{
+	res.render("logout");
+	}
+	
+
+})
 router.post("/login",function(req,res,next)
 {
-if(loginUser(req))
+if(loginUser())
+{
+	
 	res.end("login successfull");
+}
 else
 	res.end("login failed");
 });
