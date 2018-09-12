@@ -1,4 +1,5 @@
-var createCookie=function(req)
+var createCookie=function(res)
 {
-req.cookie("ponseelan","srivignesh",{})
+res.cookie("ponseelan","jebaseelan",{maxAge:80000});
 }
+module.exports=createCookie;

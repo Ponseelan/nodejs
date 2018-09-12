@@ -3,6 +3,7 @@ var user=require("../controller/UserController.js");
 var router=express.Router();
 var Customsession=require("../controller/SessionController.js");
 var loginUser=require("../controller/LoginController.js");
+var createCookie=require("../controller/cookiecontroller.js");
 //router.use("/",function(req,res,next)
 //{
 	//if(sessionvalidation(req))
@@ -13,22 +14,20 @@ var loginUser=require("../controller/LoginController.js");
 router.use(function(req,res,next)
 {
 	var cookie=req.cookies;
-	if(cookie.ponseelan)
+	if(!cookie.ponseelan && req.originalUrl=="/login")
 	{		
 		next();
 	}
 	else
 	{
-	res.render("logout");
+	res.render("register");
 	}
-	
-
 })
 router.post("/login",function(req,res,next)
 {
 if(loginUser())
 {
-	
+	createCookie(res);
 	res.end("login successfull");
 }
 else
@@ -36,7 +35,7 @@ else
 });
 router.get("/",function(req,res,next)
 {
-	res.render("index");
+	res.render("register");
 });
 router.post("/registerUser",function(req,res,next)
 {
