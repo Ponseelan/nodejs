@@ -2,19 +2,15 @@
 <html>
 <head>
 	<title>Register User</title>
-<script src="dropdownfiller.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"> </script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"> </script>
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script> 
+				<script src="/JS/dropdownfiller.js"></script>
 </head>
-<body>
-<form method="post" action="/registerUser">
-	<div><input type="text" name="userName"><br><br><br></div>
-	<div><input type="password" name="password"><br><br><br></div>
+<body ng-app="myapp" >
+<div ng-controller="DemoCtrl">
+	<select ng-options="item.a for item in collections" ng-model="selecteditem"> </select>
+</div>
 
-
-	<div><button type="submit" name="register">Register</button><br></div>
-</form>
 </body>
 </html>
