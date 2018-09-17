@@ -1,11 +1,12 @@
 var usertypemodel=require("../Model/usertype.js");
-var getallusertype=function()
+var getallusertype=function(res)
 {
 	var result=usertypemodel.find({},function(err,collections)
 		{
-			console.log(collections);
+			res.setHeader('Content-Type', 'application/json');
+			res.send(collections);
+			res.end();
 		});
-	return result;
 }
 var usertype=
 {

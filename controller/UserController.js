@@ -1,14 +1,13 @@
 var mongoose=require("../mongooseConnectable/mongoose.js");
 var userModel=require("../Model/user.js");
-var createUser=function(firstName,lastName)
+var createUser=function(UserName,Password)
 {
 var user=new userModel(
 {
-name:
-{
-	firstName:firstName,
-	lastName:lastName
-}
+
+	UserName:UserName,
+	Password:Password
+
 });
 user.save(function(err)
 {

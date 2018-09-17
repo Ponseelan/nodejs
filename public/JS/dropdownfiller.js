@@ -1,7 +1,6 @@
 var app = angular.module('myapp', []);
-app.controller("DemoCtrl",function($scope)
+app.controller("RegisterController",function($scope)
     {
-      
         $.ajax(
 {
     url:"/getdata",
@@ -10,22 +9,7 @@ app.controller("DemoCtrl",function($scope)
     success:function(data)
     {
         $scope.collections=data;
+        $scope.selecteditem=data[0];
     }
 });
     });
-
-
-
-		/*<script type="text/javascript">
-			var app = angular.module('main', []);
-app.controller('DemoCtrl', function ($scope) {
-
-    $scope.chooseCountries=[
-        {countryId : 1, name : "France - Mainland", desc: "some description" },
-        {countryId : 2, name : "Gibraltar", desc: "some description"},
-        {countryId : 3, name : "Malta", desc: "some description"}
-    ];
-
-    $scope.selectedCountry = $scope.chooseCountries[0].countryId;
-});
-		</script>*/

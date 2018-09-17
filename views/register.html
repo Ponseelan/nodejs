@@ -8,9 +8,21 @@
 				<script src="/JS/dropdownfiller.js"></script>
 </head>
 <body ng-app="myapp" >
-<div ng-controller="DemoCtrl">
-	<select ng-options="item.a for item in collections" ng-model="selecteditem"> </select>
+	 <h1> Register Page </h1>
+	<form action="/registerUser" method="POST">
+	<div ng-controller="RegisterController">
+	<div>
+		<input type="text" name="UserName" ng-model="UserName"/></div>
+	<div>
+	<div>
+		<input type="Password" name="Password" ng-model="Password"/></div>
+	<div>
+	<select ng-options="item.Type for item in collections" ng-model="selecteditem"> </select>
 </div>
-
+<div>
+	<Button type="Submit">Submit</Button>
+</div>
+</div>
+</form>
 </body>
 </html>
