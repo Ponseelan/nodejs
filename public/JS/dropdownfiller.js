@@ -1,4 +1,4 @@
-var app = angular.module('myapp', []);
+/*var app = angular.module('myapp', []);
 app.controller("RegisterController",function($scope)
     {
         $.ajax(
@@ -13,3 +13,17 @@ app.controller("RegisterController",function($scope)
     }
 });
     });
+*/
+var dashboard=angular.module('Dashboard',['ngRoute']);
+dashboard.controller('mainController',function($scope)
+{
+$scope.message="message";
+})
+dashboard.config(function($routeProvider)
+{
+$routeProvider.when('/about',
+{
+      templateUrl : '/about',
+                controller  : 'mainController'
+})
+})

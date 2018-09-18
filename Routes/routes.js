@@ -16,9 +16,9 @@ router.use(function(req,res,next)
 	{
 		next();
 	}
-	else if(req.originalUrl!="/")
+	else if(req.originalUrl!="/" && req.originalUrl.endsWith(".html"))
 	{
-		next();
+		res.sendFile(__dirname+req.originalUrl);
 	}
 	else
 	{
@@ -57,6 +57,10 @@ router.get("/logout",function(req,res,next)
 {
 	cookie.deletecookie(res);
 	res.redirect("/");
+})
+router.get("/about",function(req,res,next)
+{
+	res.render("about");
 })
 router.get("/getdata",function(req,res,next)
 {
